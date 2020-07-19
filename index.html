@@ -1,15 +1,67 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue</title>
 </head>
+
 <body>
-    
+    <h1>定義渲染區域</h1>
+    <div id="vue1">
+        {{ text }}  <!-- 要對應到data裡面的值 -->
+        {{ a }}
+
+        <h2>
+            {{ text + a }}
+        </h2>
+
+        <h3>
+            {{ text }}
+            {{ text }}
+        </h3>
+
+        <h4>
+            {{ a + b }}
+        </h4>
+    </div>
+
+    <!-- 在渲染區域外不能使用 -->
+    {{ text }}
+
+    <h1>將資料寫在屬性內</h1>
+    <div id="vue2">
+        <!-- 寫入資料到屬性 -->
+        <!-- v-bind: 添加在屬性前 -->
+        <!-- 屬性="資料名稱" !!!不需要加雙大括號!!! -->
+        <h2 v-bind:align="aligment">標題二</h2>
+        <a v-bind:href="yahoo" target="_blank">奇摩!</a>
+    </div>
+
+    <h1>判斷式</h1>
+    <div id="vue3">
+        <!-- 判斷式 v-if="資料名稱" -->
+        <!-- 當資料 true 顯示，否則 隱藏 -->
+        <p v-if="test">我是段落文字</p>
+        <div v-if="test">我是區塊</div>
+
+        <h2>活動特價</h2>
+        <a href="#" v-if="activity">特價區，點我前往~</a>
+        <!-- v-else 否則，當布林值為 false 顯示元素 -->
+        <span v-else="activity">活動已經結束囉。</span>
+    </div>
+
+    <h1>迴圈 for</h1>
+
+    <div id="vue4">
+        <!-- v-for="變數 in 次數" -->
+        <a href="#" v-for="n in 5">分頁連結{{ n }}</a>
+    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./main.js"></script>
 </body>
+
 </html>
