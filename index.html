@@ -10,7 +10,8 @@
 <body>
     <h1>定義渲染區域</h1>
     <div id="vue1">
-        {{ text }}  <!-- 要對應到data裡面的值 -->
+        {{ text }}
+        <!-- 要對應到data裡面的值 -->
         {{ a }}
 
         <h2>
@@ -57,7 +58,36 @@
     <div id="vue4">
         <!-- v-for="變數 in 次數" -->
         <a href="#" v-for="n in 5">分頁連結{{ n }}</a>
+
+        <div v-for="p in products">
+            <h3>{{p.name}}</h3>
+            <h4>價格:{{p.price}}元</h4>
+            <hr>
+        </div>
     </div>
+
+    <div id="vue5">
+        <!-- v-on:click 點擊後 -->
+        <!-- ="函式名稱" -->
+        <h2 v-on:click="show">標題123{{text}}</h2>
+
+        <div>
+            啤酒{{count}}箱
+            <span v-on:click="sub">-</span>
+            <span v-on:click="add">+</span>
+
+            <!-- v-on:click 簡寫為@click -->
+            <h3 @click="change">點我{{點我msg}}</h3>
+            <h3 @dblclick="change">點我{{msg}}</h3>
+        </div>
+    </div>
+    
+    <!-- v-model="資料名稱" 將元素內容儲存於資料名稱內 -->
+    <div id="vue6">
+        <label>請輸入您的姓名</label><input type="text" v-model="name">
+        <p>{{name}} 您好，這是您的帳號資訊:</p>
+    </div>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
