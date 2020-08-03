@@ -87,12 +87,31 @@ var vue7 = new Vue({
 
 // `` 多行 html
 // '' "" 單行html
+// 必須使用一個父元素包覆 
 Vue.component("vue-content",{
-    template:   `<h3>標題三</h3>
+    template:   `<div>    
+                <h3>標題三</h3>
                 <p>段落文字</p>
-                <hr>`
+                <hr>
+                </div>`
 })
 
-var  = new Vue({
+var vue8  = new Vue({
     el:"#vue8"
+})
+
+// 元素應用: 分頁重複內容、導覽列、頁尾
+Vue.component("navbar",{
+    template:
+    `<nav>
+        <a href="./about.html">關於我</a>
+        <a href="#">作品集</a>
+        <a href="./index.html">LOGO</a>
+        <a href="#">產品資訊</a>
+        <a href="#">聯絡我們</a>
+    </nav>`
+})
+
+var navbar = new Vue({
+    el:"#navbar"
 })
