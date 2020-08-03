@@ -74,3 +74,25 @@ var vue6= new Vue({
         name:""
     }
 });
+
+// 定義元件
+// ("元件名稱"，{樣板:"元件內容"})
+Vue.component("test-a",{
+    template:"<h2>測試元件123</h2>"
+})
+
+var vue7 = new Vue({
+    el:"#vue7"
+})
+
+// `` 多行 html
+// '' "" 單行html
+Vue.component("vue-content",{
+    template:   `<h3>標題三</h3>
+                <p>段落文字</p>
+                <hr>`
+})
+
+var  = new Vue({
+    el:"#vue8"
+})
